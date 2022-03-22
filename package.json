@@ -1,0 +1,32 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run server\" \"npm run lint-watch\" \"next dev\"",
+    "build:app": "concurrently --kill-others \"npm run lint\" \"npm run build\"",
+    "start": "concurrently --kill-others \"npm run server\" \"next start\"",
+    "build": "next build",
+    "lint": "next lint",
+    "lint-watch": "nodemon --watch . --exec npm run lint",
+    "server": "json-server --watch ./lib/database/db.json --port 3001"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.5.1",
+    "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0",
+    "jwt-decode": "^3.1.2",
+    "next": "^12.1.0",
+    "nodemon": "^2.0.15",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "8.4.1",
+    "eslint-config-next": "12.0.7"
+  }
+}
